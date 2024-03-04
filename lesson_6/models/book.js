@@ -4,14 +4,8 @@ const Joi = require("joi");
 const {handleMongooseError} = require("../middlewares");
 
 const bookSchema = new Schema({
-    title: {
-        type: String,
-        required: true,
-    },
-    author: {
-        type: String,
-        required: true,
-    },
+    title: String,
+    author: String,
 }, {versionKey: false, timestamps: true});
 
 

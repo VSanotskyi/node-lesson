@@ -7,9 +7,10 @@ const getAll = async (req, res) => {
 };
 
 const getById = async (req, res) => {
-    const result = await Book.findById("65d743079dfd565cd262454e");
+    const {id} = req.params;
+    const result = await Book.findById(id);
     if (!result) throw HttpError(404, "Not found");
-    res.json(req.params.id);
+    res.json(result);
 };
 
 const add = async (req, res) => {
